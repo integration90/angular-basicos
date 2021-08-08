@@ -1,0 +1,49 @@
+<h1 style="text-align: center;">{{titularidad}}</h1>
+
+<form>
+  Nombre: <input type="text" name ="nombre" [(ngModel)]="nombre"><br/>
+
+  Apellido: <input type="text" name ="apellido" [(ngModel)]="apellido"><br/>
+
+  Cargo: <input type="text" name ="cargo" [(ngModel)]="cargo"><br/>
+
+  <input type="submit" name ="Registrar"(click)="registrarUsuario()"><br/>
+
+
+
+</form>
+
+<br>
+<!--Directiva estructural (porque modifica la estructura del DOM) *ngIf (condicion)-->
+<p *ngIf="registrado;else sinregistrar">{{mensaje}} con el nombre: {{nombre}} {{apellido}}
+
+  <!--Operadores ternarios..ngStyle comprobar cadena para cambiar en este caso atributo de color dos condiciones
+   y tiene el cargo de <span [ngStyle]="{color: cargo=='director' ? 'red':'black'}"> {{cargo}} </span></p>
+
+  con la ngClass lo que hariamos seria lo mismo pero con los atributos programas en app.component.css que hemos programado-->
+  y tiene el cargo de <span [ngClass]="{paraDirectores:cargo=='director'}">{{cargo}} </span></p>
+<!--Para que no salga en la web esta la etiqueta ng-template , si ponemos un #sinregistrar nos salta en el if else  -->
+<ng-template #sinregistrar>
+
+
+      <p>
+
+
+      Nadie registrado
+
+
+      </p>
+
+  </ng-template>
+
+  <br><br>
+
+  <ul>
+<!--Aqui seria bucle for es la sintaxix tambien ponemos la variable i que es el indice del bucle-->
+    <li *ngFor="let entrada of entradas; let i=index"><span style ="font-size: larger;font-weight:bold">{{entrada.titulo}}</span>
+      . Entrada {{i+1}}
+    
+    </li>
+
+  </ul>
+

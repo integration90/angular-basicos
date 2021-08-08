@@ -1,0 +1,20 @@
+<h1>{{title}}</h1>
+<!--Bootstrap hay que instalar por consola en cada proyecto por consola npm install bootstrap --save -->
+<!--Despues en el archivo angular.json hay que agergar la ruta de styles-->
+<!--  "node_modules/bootstrap/dist/css/bootstrap.min.css"  -->
+<!-- y tambien la ruta de Script-->
+<!--  "node_modules/bootstrap/dist/js/bootstrap.min.js"  -->
+<div class="container">
+<form>
+<!--doble bindig - ojo si hay que mirar el tipo de archivo... sin es numero o texto -->
+<!--ngModel es un directiva-->
+  Numero 1:<input type="number" [(ngModel)]="numero1" name="numero1"><br/><br>
+  Numero 2:<input type="number" [(ngModel)]="numero2" name="numero2"><br/><br>
+
+  <input type="submit" value="Sumar" (click)="sumar()" class="btn btn-outline-primary btn-lg" data-bs-toggle="button" autocomplete="off" />
+  <input type="submit" value="Restar" (click)="restar()" class="btn btn-outline-secondary btn-lg" data-bs-toggle="button" autocomplete="off" aria-pressed="true" />
+  <input type="submit" value="Multiplicar" (click)="multiplicar()" class="btn btn-outline-danger btn-lg" data-bs-toggle="button" autocomplete="off"/>
+</form>
+<p>Resultado {{resultado}} </p>
+</div>
+<!--interpolacion con la variable resultado-->

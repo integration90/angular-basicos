@@ -1,0 +1,28 @@
+<p>listado Heroes</p>
+<!--Condicion if comprueba que esa variable es diferente a cadena vacia de la variable o simplemente herorBorrado .. sabe si es un string vacio es como un true-->
+<div *ngIf="heroeBorrado;else noBorrado" >
+    <h3>Héroe Borrado : <small>{{heroeBorrado}}</small></h3>
+
+</div>
+
+<<ng-template #noBorrado>
+
+    <h3>No ha borrado Nada.</h3>
+
+</ng-template>
+
+<button (click)="borrarHeroe()">
+
+        Borrar
+
+</button>
+
+<ul>
+
+    <!--Bucle for each-->
+    <li *ngFor="let heroe of heroes; let i=index">
+        {{i + 1}} - {{heroe}}
+    </li>
+    
+
+</ul>

@@ -1,0 +1,27 @@
+<p>Nombre del empleado : {{nombre}}</p>
+
+<p>Apellido del empleado : {{apellido}}</p>
+<!-- si fuera privado con getter <p>Edad del empleado : {{getEdad()+5}}</p>-->
+
+<!--Aqui podemos comprobar el campo que te llega la informacion Condicionales-->
+
+<p>Edad del empleado : {{edad<18 ? "Menor de edad": "Mayor de edad"}}</p>
+<!--añadir variable-->
+<p>Empresa del empleado : {{empresa}}</p>
+<!--Keyup levantar tecla en cuanto levatemos la tecla 0 de tiempo , tambien ponemos propiedad entre corchetes-->
+<!--Introduce la empresa :<input type ="text" #empresa (keyup)="0"  [disabled]="habilitacionCuadro">-->
+<!--banna box bindig bidirecional para eso la sintasix [()] y ngmodel que tenemos que importar FormsModule en app.module.ts-->
+Introduce la empresa :<input type ="text" [(ngModel)]="empresa" />
+
+<br>
+{{textoDeRegistro}}
+<br>
+<!--al pasar el valor de los componentes es con la $event , de esta manera pasamos el valor del objeto , el evento al .ts-->
+Registrado: <input type ="radio" value="si" name="nregistro" id="registro" [checked]="usuResgistrado" (click)="setUsuarioRegistrado($event)" />
+<br>
+No registrado: <input type ="radio" value="no" name="nregistro" id="registro" (click)="setUsuarioRegistrado($event)"/>
+<!--Como tenemos creado el Property Binding ... podemos llamar a la funcion que creamos en el archivo .ts-->
+{{getRegistroUsuario()}}
+<br>
+<!--Tambien lo podemos hacer con boton ... para eso tenemos que hacer un metodo en el ts ..-->
+<!--<input type="button" value = "ok!" (click)="llamaEmpresa(empresa.value)"/>--> 

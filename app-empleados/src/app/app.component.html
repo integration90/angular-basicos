@@ -1,0 +1,64 @@
+
+
+<br><br>
+
+<div class="container">
+
+    <div class="col">
+      
+      <h1>{{titulo}}</h1>
+
+
+    </div>
+
+    <form class="form-group row">
+
+      <div class="form-group col-md-3">
+
+          <label for="nombre">Nombre:</label>
+          <input type="text" name="nombre" id="nombre" placeholder="Nombre" clas="form-control" [(ngModel)]="cuadroNombre">
+      </div>
+
+      <div class="form-group col-md-3">
+
+          <label for="apellido">Apellido:</label>
+          <input type="text" name="apellido" id="apellido" placeholder="Apellido" clas="form-control" [(ngModel)]="cuadroApellido">
+        </div>
+
+        <div class="form-group col-md-3">
+
+          <label for="cargo">Cargo:</label>
+          <input type="text" name="cargo" id="cargo" placeholder="Cargo" clas="form-control" [(ngModel)]="cuadroCargo">
+        </div>
+
+        <div class="form-group col-md-3">
+
+          <label for="salario">Salario:</label>
+          <input type="text" name="salario" id="salario" placeholder="Salario" clas="form-control" [(ngModel)]="cuadroSalario">
+        </div>
+
+       
+
+        <div clas="col">
+
+          <button type ="submit" class="btn btn-primary" (click)="agregarEmpleado()" style ="margin-top:35px;">Agregar
+
+
+          </button>
+        </div>
+
+
+    </form>
+
+    <br><br>
+
+
+</div>
+<br><br><br>
+
+<!--Pasar datos al hijo tienes que que asignarle una variable que tienes que referenciar en empleado hijo components con el comunicador @input que es de padre a hijos-->
+
+<app-empleado-hijo-c *ngFor ="let empleado of empleados ; let i=index" [empleadoDeLista]="empleado" [indice]="i"></app-empleado-hijo-c>
+
+
+
